@@ -95,5 +95,20 @@ namespace Dapper.Repositories
                 );
             }
         }
+
+        protected DynamicParameters CreateDynamicParameters()
+        {
+            DynamicParameters parameters = new DynamicParameters();
+
+
+            return parameters;
+        }
+
+        protected OracleDynamicParameters CreateOracleDynamicParameters()
+        {
+            OracleDynamicParameters parameters = new OracleDynamicParameters();
+
+            return parameters;
+        }
     }
 }
