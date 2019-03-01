@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.ItemProperties.Dapper.Repositories FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Dapper.Repositories/Class1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Dapper.Repositories/RdbmsType.cs">
     <Files>
-      <File FileName="Dapper.Repositories/Class1.cs" Line="4" Column="1" />
+      <File FileName="Dapper.Repositories/Repository.cs" Line="15" Column="51" />
+      <File FileName="Dapper.Repositories/RdbmsType.cs" Line="7" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
