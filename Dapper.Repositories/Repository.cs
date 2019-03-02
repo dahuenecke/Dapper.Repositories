@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Reflection;
 using System.Threading.Tasks;
 using Dapper;
 using MySql.Data.MySqlClient;
@@ -96,19 +97,71 @@ namespace Dapper.Repositories
             }
         }
 
-        protected DynamicParameters CreateDynamicParameters()
+        protected object CreateDynamicParameters<T>(T obj)
         {
-            DynamicParameters parameters = new DynamicParameters();
+            IEnumerable<IParameter> parameters = ToParameters(obj);
 
+            return CreateDynamicParameters(parameters);
+        }
 
+        protected object CreateDynamicParameters(IEnumerable<IParameter> parameters)
+        {
+            switch (_rdbms)
+            {
+                case RdbmsType.Oracle:
+                    return CreateOracleParameters(parameters);
+                default:
+                    return CreateParameters(parameters);
+            }
+        }
+
+        private static DynamicParameters CreateParameters(IEnumerable<IParameter> parameters)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+
+            foreach (IParameter parameter in parameters)
+            {
+                dynamicParameters.Add(parameter.Name, parameter.Value, dbType: parameter.DbType, direction: parameter.ParameterDirection, size: parameter.Size);
+            }
+
+            return dynamicParameters;
+        }
+
+        private static OracleDynamicParameters CreateOracleParameters(IEnumerable<IParameter> parameters)
+        {
+            OracleDynamicParameters oracleDynamicParameters = new OracleDynamicParameters();
+
+            foreach (IParameter parameter in parameters)
+            {
+                oracleDynamicParameters.Add(parameter.Name, parameter.Value, dbType: parameter.DbType, direction: parameter.ParameterDirection, size: parameter.Size);
+            }
+
+            return oracleDynamicParameters;
+        }
+
+        private IEnumerable<IParameter> ToParameters<T>(T obj)
+        {
+            List<Parameter> parameters = new List<Parameter>();
+
+            foreach (PropertyInfo property in obj.GetType().GetProperties())
+            {
+                Parameter parameter = new Parameter()
+                {
+                    Name = $"@{property.Name}",
+                    Value = property.GetValue(obj),
+                    DbType = ToDbType(property.GetType()),
+                    ParameterDirection = ParameterDirection.Input
+                };
+
+                parameters.Add(parameter);
+            }
             return parameters;
         }
 
-        protected OracleDynamicParameters CreateOracleDynamicParameters()
+        private DbType ToDbType(Type type)
         {
-            OracleDynamicParameters parameters = new OracleDynamicParameters();
-
-            return parameters;
+            // create typemap
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,0 +1,4 @@
+/Users/i815722/Source/Repos/Dapper.Repositories/Dapper.Repositories/obj/Debug/netcoreapp2.2/Dapper.Repositories.csprojAssemblyReference.cache
+/Users/i815722/Source/Repos/Dapper.Repositories/Dapper.Repositories/obj/Debug/netcoreapp2.2/Dapper.Repositories.csproj.CoreCompileInputs.cache
+/Users/i815722/Source/Repos/Dapper.Repositories/Dapper.Repositories/obj/Debug/netcoreapp2.2/Dapper.Repositories.AssemblyInfoInputs.cache
+/Users/i815722/Source/Repos/Dapper.Repositories/Dapper.Repositories/obj/Debug/netcoreapp2.2/Dapper.Repositories.AssemblyInfo.cs
