@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Dapper.Repositories/Examples/Repos/IAuthorRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Dapper.Repositories/Utilities.cs">
     <Files>
-      <File FileName="Dapper.Repositories/Repository.cs" Line="111" Column="9" />
-      <File FileName="Dapper.Repositories/Examples/Repos/AuthorRepository.cs" Line="30" Column="35" />
+      <File FileName="Dapper.Repositories/Repository.cs" Line="163" Column="30" />
+      <File FileName="Dapper.Repositories/Examples/Repos/AuthorRepository.cs" Line="25" Column="33" />
       <File FileName="Dapper.Repositories/OracleDynamicParameters.cs" Line="38" Column="6" />
       <File FileName="Dapper.Repositories/Parameter.cs" Line="12" Column="11" />
       <File FileName="Dapper.Repositories/Examples/Models/Author.cs" Line="8" Column="48" />
-      <File FileName="Dapper.Repositories/Examples/Repos/IAuthorRepository.cs" Line="9" Column="20" />
+      <File FileName="Dapper.Repositories/Examples/Repos/IAuthorRepository.cs" Line="13" Column="40" />
+      <File FileName="Dapper.Repositories/Utilities.cs" Line="10" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

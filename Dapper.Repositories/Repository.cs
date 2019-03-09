@@ -161,7 +161,8 @@ namespace Dapper.Repositories
         private DbType ToDbType(Type type)
         {
             // create typemap
-            throw new NotImplementedException();
+            return TypeMapping.TypeMap[type];
+
         }
     }
 }
